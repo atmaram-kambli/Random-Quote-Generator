@@ -4,8 +4,6 @@ async function GetNewQuote(){
         document.getElementById('loader').style.display = 'block';
         
 
-        
-
         await delay(1000);
 
 
@@ -31,3 +29,13 @@ async function GetNewQuote(){
         if(!authorName) author.innerHTML="Unknown"
         else author.innerHTML = authorName;
 }       
+function copyText() {
+        let quote = document.getElementById("quote").textContent;
+        console.log(quote);
+        navigator.clipboard.writeText(quote);
+        let copy = document.querySelector(".copy-text").textContent = "Text Copied";
+        setTimeout(() => {
+                document.querySelector(".copy-text").textContent = "Copy Quote";
+        }, 1000);
+        
+}
